@@ -1,7 +1,7 @@
 /*!
  * page-visibility.js - v1.0 Page Visibility API Wrapper and Polyfill
  * http://github.com/Fiery-Fenix
- * Licensed under the MIT license.
+ * @license MIT
  */
 /* Public methods:
  * pageVisibility.isHidden

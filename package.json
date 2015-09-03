@@ -1,0 +1,24 @@
+{
+  "name": "page-visibility.js",
+  "version": "1.0.0",
+  "description": "Page Visibility API Wrapper and Polyfill",
+  "main": "page-visibility.js",
+  "scripts": {
+    "minify": "./node_modules/.bin/uglifyjs page-visibility.js --compress --mangle --comments -o page-visibility.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fiery-Fenix/page-visibility.js.git"
+  },
+  "keywords": [
+    "page visibility api",
+    "visibility",
+    "page-visibility.js"
+  ],
+  "author": "Fenix <f.fenix@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fiery-Fenix/page-visibility.js/issues"
+  },
+  "homepage": "https://github.com/Fiery-Fenix/page-visibility.js"
+}
