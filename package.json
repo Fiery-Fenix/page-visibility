@@ -1,5 +1,5 @@
 {
-  "name": "page-visibility.js",
+  "name": "page-visibility",
   "version": "1.0.0",
   "description": "Page Visibility API Wrapper and Polyfill",
   "main": "page-visibility.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Fiery-Fenix/page-visibility.js.git"
+    "url": "https://github.com/Fiery-Fenix/page-visibility.git"
   },
   "keywords": [
     "page visibility api",
@@ -18,7 +18,7 @@
   "author": "Fenix <f.fenix@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Fiery-Fenix/page-visibility.js/issues"
+    "url": "https://github.com/Fiery-Fenix/page-visibility/issues"
   },
-  "homepage": "https://github.com/Fiery-Fenix/page-visibility.js"
+  "homepage": "https://github.com/Fiery-Fenix/page-visibility"
 }
