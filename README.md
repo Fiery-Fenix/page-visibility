@@ -18,7 +18,8 @@ focus/blur hack (note that when browser just lose focus but still visible for us
  * Safari 6.1+ - native support
  * Opera 15-19 - native support with webkit prefix
  * Opera 20+ - native support
- * iOS Safari 7.1 - native support
+ * iOS Safari 7.x - native support not working, polyfilled with pageshow/pagehide events
+ * iOS Safari 8.0+ - native support
  * Android Browser 4-4.3 - polyfilled by focus/blur events
  * Android Browser 4.4+ - native support
  * Opera Mobile 30+ - native support

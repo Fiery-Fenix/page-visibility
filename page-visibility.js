@@ -1,6 +1,7 @@
 /*!
- * page-visibility.js - v1.0 Page Visibility API Wrapper and Polyfill
+ * page-visibility.js - Page Visibility API Wrapper and Polyfill
  * http://github.com/Fiery-Fenix
+ * @version 1.1.0
  * @license MIT
  */
 /* Public methods:
@@ -16,7 +17,8 @@
  * Firefox 18+ - native support
  * Chrome 14-32 - native support with webkit prefix
  * Chrome 33+ - native support
- * Safari 6.1+ - native support
+ * iOS Safari 7.x - native support not working, polyfilled with pageshow/pagehide events
+ * iOS Safari 8.0+ - native support
  * Opera 15-19 - native support with webkit prefix
  * Opera 20+ - native support
  * iOS Safari 7.1 - native support
@@ -160,19 +162,25 @@
          * @private
          */
         _init: function () {
-            var listener;
+            var isSafari7 = navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i),
+                listener;
 
             // Prevent multiple inits
             if (self._inited) {
                 return;
             }
 
-            self._isNative = 'hidden' in doc || 'webkitHidden' in doc;
+            self._isNative = ('hidden' in doc || 'webkitHidden' in doc) && !isSafari7;
             listener = function () {
                 self._onChange.apply(self, arguments);
             };
 
-            if (self._isNative) {
+            if (isSafari7) {
+                // Hack for iOS Safari 7.x
+                // Safari reports that support Page Visibility API, but event 'visibilitychange' never happen
+                win.addEventListener('pageshow', listener, true);
+                win.addEventListener('pagehide', listener, true);
+            } else if (self._isNative) {
                 // For normal browsers - subscribe to standart event visibilitychange
                 self._visibilityState.current = doc.webkitVisibilityState || doc.visibilityState;
                 doc.addEventListener(('webkitHidden' in doc ? 'webkit' : '') + 'visibilitychange', listener);
